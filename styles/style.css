@@ -1,13 +1,10 @@
 * {
     font-family:Arial, Helvetica, sans-serif ;
     font-size: 16px;
-
 }
 
 body {
     background-color: rgb(98, 98, 255);
-
-
 }
 
 main {
@@ -16,5 +13,4 @@ main {
     margin: auto;
     padding: 10px;
     box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.295)
-
 }
