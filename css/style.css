@@ -158,6 +158,41 @@ section.faq .center h1{
 	color: rgba(33, 56, 66, 0.6);
 }
 
+section.faq2{
+	padding: 50px 0;
+	border-top: 1px solid #ccc;
+	font-size: 20px;
+	text-align: center;
+}
+
+section.faq2 .center h1{
+	color: blue;
+    box-shadow: 10px 10px 50px 0 rgba(7, 1, 165, 1);
+}
+
+
+.box-faq2{
+	margin: 30px 200px;
+	border-radius: 4px;
+	box-shadow: 50px 50px 100px 0 rgba(0, 0, 0, 0.15);
+	background-color: #ffffff;
+	float: left;
+	width: 22%;
+	min-height: 200px;
+	margin-right: 3%;
+	padding: 0 30px;
+}
+
+.box-faq2 h2{
+	font-size: 24px;
+	padding: 10px 0;
+}
+
+.box-faq2 p{
+	font-size: 14px;
+	color: rgba(33, 56, 66, 0.6);
+}
+
 section.contact{
 	width: 100%;
 	padding: 40px 0;
