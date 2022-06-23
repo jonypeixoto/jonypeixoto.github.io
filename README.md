@@ -1,2 +1,2 @@
 # jonypeixoto.github.io
-Jony Peixoto Overview Portfólio on GitHub
+Connect with my social medias
