@@ -1,0 +1,109 @@
+/* Instagram Area 1---------------------------------- */
+.instagram-area-1 {
+	position: relative;
+	z-index: 1;
+	padding: 0 100px;
+	@include ml {
+		padding: 0 50px;
+	}
+	@include sm {
+		padding: 0 15px;
+	}
+}
+.instagram-sec-title {
+	font-size: 94px;
+	font-weight: 700;
+	color: $white-color;
+	margin-bottom: -150px;
+	@include xxl {
+		font-size: 60px;
+	}
+	@include lg {
+		margin-bottom: 0;
+		margin-top: -0.23em;
+	}
+	@include sm {
+		font-size: 50px;
+	}
+	@include xs {
+		font-size: 40px;
+	}
+}
+.instagram-slider1 {
+	padding-top: 34px;
+	.swiper-wrapper {
+		padding-bottom: 150px;
+		padding-top: 150px;
+	}
+	.swiper-slide {
+		transition: 0.4s;
+		height: 240px;
+		&.swiper-slide-active {
+			margin-top: -150px;
+			~ .swiper-slide {
+				~ .swiper-slide {
+					margin-top: 150px;
+					~ .swiper-slide {
+						margin-top: 0;
+						~ .swiper-slide {
+							margin-top: -150px;
+							~ .swiper-slide {
+								margin-top: 0;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	@include xxl {
+		padding-top: 76px;
+		.swiper-slide {
+			height: 180px;
+		}
+	}
+	@include lg {
+		padding-top: 30px;
+		.swiper-wrapper {
+			padding: 0;
+		}
+		.swiper-slide {
+			margin-top: 0 !important;
+			height: auto;
+		}
+	}
+}
+.insta-box {
+	position: relative;
+	border-radius: 30px;
+	overflow: hidden;
+	height: 100%;
+	img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		border-radius: 30px;
+	}
+	.icon-btn {
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%);
+		background: rgba($color: #000000, $alpha: 0.5);
+		border: 0;
+		height: 100%;
+		width: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-size: 36px;
+		color: $white-color;
+		border-radius: 30px;
+		opacity: 0;
+	}
+	&:hover {
+		.icon-btn {
+			opacity: 1;
+		}
+	}
+}

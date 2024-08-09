@@ -1,0 +1,247 @@
+/* Testimonial Area ---------------------------------- */
+.testi-slider1 {
+    .slider-pagination {
+        position: relative;
+        height: 60px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+        align-items: center;
+        margin-top: 60px;
+        bottom: 0;
+        @include sm {
+            height: 50px;
+        }
+        @include xs {
+            gap: 10px;
+            height: 30px;
+        }
+        &:after {
+            content: '';
+            position: absolute;
+            height: 1px;
+            width: 100%;
+            background: $theme-color;
+            left: 0;
+            top: 50%;
+            transform: translate(0, -50%);
+            z-index: -1;
+        }
+        .swiper-pagination-bullet {
+            --swiper-pagination-bullet-horizontal-gap: 0px;
+            width: 46px;
+            height: 46px;
+            background: $title-color;
+            border: 2px solid rgba($color: #45F882, $alpha: 0.3);
+            transition: 0.4s;
+            @include sm {
+                width: 30px;
+                height: 30px;
+            }
+            @include xs {
+                width: 20px;
+                height: 20px;
+            }
+            &:before {
+                width: 26px;
+                height: 26px;
+                background: $theme-color;
+                border: 0;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                opacity: 0;
+                @include xs {
+                    width: 10px;
+                    height: 10px;
+                }
+            }
+            &.swiper-pagination-bullet-active {
+                width: 60px;
+                height: 60px;
+                border: 2px solid rgba($color: #45F882, $alpha: 1);
+                @include sm {
+                    width: 50px;
+                    height: 50px;
+                }
+                @include xs {
+                    width: 30px;
+                    height: 30px;
+                }
+                &:before {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+    .slider-arrow {
+        opacity: 1;
+        visibility: visible;
+        transform: scale(1);
+        top: auto;
+        bottom: 5px;
+        left: 0;
+        --icon-size: 50px;
+        background: $title-color;
+        &.slider-next {
+            left: auto;
+            right: 0;
+        }
+    }
+}
+.testi-card {
+    position: relative;
+    padding: 33px 40px 34px;
+    background-size: 100% 100%;
+    &_text {
+        font-size: 16px;
+        font-weight: 400;
+        margin: 0px 0 40px 0;
+        padding-bottom: 32px;
+        border-bottom: 1px solid rgba($color: #969EB2, $alpha: 0.5);
+        @include md {
+            font-size: 15px;
+        }
+        @include sm {
+            font-size: 18px;
+        }
+        @include xs {
+            font-size: 16px;
+        }
+    }
+    .quote-icon {
+        margin-bottom: 0px;
+        opacity: 0.13;
+        flex: none;
+    }
+    &_profile {
+        display: flex;
+        align-items: center;
+        position: relative;
+        justify-content: space-between;
+        z-index: 3;
+        gap: 20px;
+    }
+    &_avater {
+        width: 60px;
+        min-width: 60px;
+        border-radius: 15px;
+        overflow: hidden;
+        margin-bottom: 14px;
+        img {
+            border-radius: inherit;
+        }
+    }
+    &_name {
+        font-size: 24px;
+        font-weight: 600;
+        margin-bottom: 0px;
+        color: $white-color;
+        @include xl {
+            font-size: 20px;
+        }
+    }
+    &_desig {
+        margin-bottom: 0;
+        display: block;
+        color: $theme-color;
+        font-size: 14px;
+    }
+    
+    &_review {
+        font-size: 14px;
+        color: #FDA700;
+        display: flex;
+        gap: 5px;
+        justify-content: center;
+        margin-bottom: -0.4em;
+        i {
+            margin: 0 2px;
+        }
+    }
+}
+
+/* Testimonial Area 02---------------------------------- */
+.testi-sec-2 {
+    background-size: auto;
+    background-position: 120px 120px;
+    @include xxl {
+        background-position: -60px 120px;
+    }
+    @include xl {
+        background-position: -60px 60px;
+    }
+}
+.testi-thumb2 {
+    margin-right: -136px;
+    margin-left: 45px;
+    @media (max-width: 1700px) {
+        margin-right: 0;
+    }
+    @include xl {
+        margin-left: 0;
+    }
+    @include lg {
+        img {
+            height: 600px;
+            object-fit: cover;
+            object-position: 0;
+        }
+    }
+    @include md {
+        img {
+            height: auto;
+        }
+    }
+}
+.testi-card-2 {
+    .media {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .testi-card_review {
+        justify-content: start;
+    }
+    .testi-card_profile {
+        justify-content: start;
+    }
+    .testi-card_name {
+        font-size: 24px;
+        font-weight: 600;
+        color: $title-color;
+        margin-top: 20px;
+        margin-bottom: 6px;
+    }
+    .quote-icon {
+        img {
+            width: 90px;
+            opacity: 0.45;
+        }
+    }
+    .testi-card_text {
+        color: $body-color;
+        font-size: 16px;
+        font-weight: 400;
+        font-family: $body-font;
+        margin-top: 15px;
+        margin-bottom: 0px;
+    }
+}
+.testi-card-slide {
+    .swiper-pagination-bullets {
+        text-align: left;
+        margin-top: 45px;
+    }
+}
+@include xl {
+    .testi-box-area {
+        margin-bottom: 20px;
+    }
+}
+@include xs {
+    .testi-card-2 .testi-card_name {
+        font-size: 20px;
+    }
+}

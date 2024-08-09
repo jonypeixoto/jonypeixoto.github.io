@@ -1,0 +1,91 @@
+//Point Table 1---------------------------------------
+.point-table-area-1 {
+    position: relative;
+    background-attachment: fixed;
+    z-index: 1;
+    &:after {
+        content: '';
+        position: absolute;
+        inset: -1px;
+        z-index: -1;
+        background: linear-gradient(180deg, #0B0E13 0%, rgba(11, 14, 19, 0.94) 46.17%, #0B0E13 100%);
+    }
+}
+.table-responsive {
+    overflow-y: hidden;
+}
+.tournament-table {
+    $table-spacing-x: 0;
+    $table-spacing-y: 10px;
+    border: 0;
+    border-collapse: separate;
+    border-spacing: $table-spacing-x $table-spacing-y;
+    margin-top: $table-spacing-y * -1;
+    margin-bottom: $table-spacing-y * -1;
+    min-width: 1000px;
+    thead {
+        background-color: $theme-color;
+        clip-path: polygon(2% 0%, 98% 0%, 100% 50%, 98% 100%, 2% 100%, 0% 50%);
+        th {
+            border: 0;
+            text-align: center;
+            font-size: 20px;
+            font-weight: 700;
+            font-family: $title-font;
+            color: $title-color;
+            line-height: 44px;
+            &:last-child {
+                width: fit-content;
+                display: block;
+                padding-right: 50px;
+            }
+            &:first-child {
+                padding-left: 50px;
+                width: fit-content;
+                display: block;
+            }
+            &:nth-child(2) {
+                text-align: left;
+            }
+        }
+    }
+    tbody {
+        tr {
+            clip-path: polygon(2% 0%, 98% 0%, 100% 50%, 98% 100%, 2% 100%, 0% 50%);
+            background: $black-color3;
+            margin-top: 10px;
+            th {
+                border: 0;
+                text-align: center;
+                font-size: 24px;
+                font-weight: 600;
+                font-family: $title-font;
+                color: $white-color;
+                vertical-align: middle;
+            }
+            td {
+                border: 0;
+                vertical-align: middle;
+                font-size: 24px;
+                font-weight: 600;
+                font-family: $title-font;
+                color: $white-color;
+                width: fit-content;
+                padding: 10px;
+                a {
+                    color: $white-color;
+                    &:hover {
+                        color: $theme-color;
+                    }
+                }
+                ~ td {
+                    text-align: center;
+                }
+                img {
+                    max-height: 40px;
+                    margin-right: 20px;
+                }
+            }
+        }
+    }
+}

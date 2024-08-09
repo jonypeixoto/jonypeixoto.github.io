@@ -1,0 +1,345 @@
+/* Team global ---------------------------------- */
+.th-team {
+    position: relative;
+    .team-img {
+        position: relative;
+        overflow: hidden;
+        img {
+            width: 100%;
+            transition: 0.4s ease-in-out;
+        }
+    }
+    .team-desig {
+        font-size: 14px;
+        font-weight: 500;
+        display: block;
+        margin-bottom: -0.45em;
+        transition: 0.4s ease-in-out;
+        color: $theme-color;
+    }
+    .th-social {
+        transition: 0.4s ease-in-out;
+        a {
+            --icon-size: 40px;
+            background-color: $white-color;
+            color: $theme-color;
+            &:hover {
+                background-color: $theme-color;
+                color: $white-color;
+            }
+        }
+    }
+    .box-title {
+        margin-bottom: 0;
+    }
+}
+/* Team Card ---------------------------------- */
+.team-sec-1 {
+    &:hover {
+        .team-slider1 {
+            .swiper-slide {
+                &:nth-of-type(even) {
+                    margin-top: 100px;
+                }
+            }
+        }
+    }
+}
+.team-slider1 {
+    .swiper-slide {
+        transition: all 1.5s ease-in-out;
+    }
+    &:hover {
+        .swiper-slide {
+            &:nth-of-type(even) {
+                margin-top: 100px;
+            }
+        }
+    }
+    .slider-arrow {
+        @media (min-width: 1599px) and (max-width: 1700px) {
+            --pos-x: -20px;
+        }
+    }
+}
+.team-card {
+    text-align: center;
+    border: double 2px transparent;
+    border-radius: 10px;
+    background-image: linear-gradient($black-color3, $black-color3), linear-gradient(to right, $theme-color, $theme-color2);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+    margin-bottom: 4px;
+    position: relative;
+    .team-card-corner {
+        position: absolute;
+        display: inline-block;
+        width: 34px;
+        height: 34px;
+        left: 0;
+        top: 0;
+        border-top: solid 17px $theme-color;
+        border-left: solid 17px $theme-color;
+        border-right: solid 17px transparent;
+        border-bottom: solid 17px transparent;
+        z-index: 1;
+        border-radius: 8px 0 0 0;
+        &.team-card-corner2 {
+            right: 0;
+            left: auto;
+            border-right: solid 17px $theme-color2;
+            border-left: solid 17px transparent;
+            border-top: solid 17px $theme-color2;
+            border-radius: 0 8px 0 0;
+        }
+        &.team-card-corner3 {
+            top: auto;
+            bottom: 0;
+            border-bottom: solid 17px $theme-color;
+            border-top: solid 17px transparent;
+            border-radius: 0 0 0 8px;
+        }
+        &.team-card-corner4 {
+            right: 0;
+            left: auto;
+            top: auto;
+            bottom: 0;
+            border-right: solid 17px $theme-color2;
+            border-left: solid 17px transparent;
+            border-bottom: solid 17px $theme-color2;
+            border-top: solid 17px transparent;
+            border-radius: 0 0 8px 0;
+        }
+    }
+    .img-wrap {
+        position: relative;
+        border-radius: 10px;
+        border: double 4px transparent;
+        background-image: linear-gradient($black-color3, $black-color3), linear-gradient(to right, $theme-color, $theme-color2);
+        background-origin: border-box;
+        background-clip: content-box, border-box;
+        margin: 7px;
+        img {
+            transition: 0.4s;
+        }
+        .game-logo {
+            position: absolute;
+            top: 22px;
+            left: 22px;
+        }
+    }
+    .team-img {
+        border-radius: 10px;
+        padding: 12px;
+        img {
+            width: 100%;
+            border-radius: 10px;
+        }
+    }
+    .team-card-content {
+        display: inline-block;
+        left: 50%;
+        bottom: -7px;
+        transform: translate(-50%, 0);
+        position: absolute;
+        background: linear-gradient(to right, $theme-color, $theme-color2);
+        border-radius: 30px;
+        padding: 4px;
+        width: max-content;
+    }
+    .box-title {
+        font-size: 20px;
+        font-weight: 700;
+        margin: 0px;
+        display: inline-block;
+        background-color: $title-color;
+        border-radius: 30px;        
+        a {
+            color: $white-color;
+            padding: 1px 26px;
+            display: inline-block;
+            &:hover {
+                color: $theme-color;
+            }
+        }
+    }
+    &:hover {
+        .img-wrap {
+            .game-logo {
+                transform: rotateY(180deg);
+            }
+        }
+    }
+}
+@include xs {
+    .team-slider1 .swiper-slide:nth-of-type(even) {
+        margin-top: 0px;
+    }
+}
+/* Team Card 2---------------------------------- */
+.team-sec-2 {
+    .tab-content {
+        margin-bottom: -235px;
+        position: relative;
+        z-index: 3;
+    }
+}
+.team-tab {
+    justify-content: center;
+    margin-bottom: 60px;
+    margin-top: -20px;
+    border: 0;
+    gap: 10px;
+    .nav-item {
+        .nav-link {
+            height: 80px;
+            width: 80px;
+            padding: 0;
+            line-height: 74px;
+            border-radius: 50%;
+            border: 2px solid $black-color;
+            background: transparent;
+            transition: 0.4s;
+            &.active, 
+            &:hover {
+                border-color: $theme-color;
+            }
+        }
+    }
+    @include md {
+        margin-top: 0;
+    }
+}
+
+/* Team Card 3---------------------------------- */
+.team-sec-3 {
+    margin-top: -418px;
+    position: relative;
+    z-index: 3;
+}
+.team-card.style3 {
+    padding: 10px 10px 0;
+    background: $white-color;
+    box-shadow: 0px 10px 15px 0px rgba(0, 0, 0, 0.08);
+    .img-wrap {
+        margin-bottom: 0;
+        &:before, 
+        &:after {
+            display: none;
+        }
+    }
+    .team-card-content {
+        padding: 30px 0;
+        position: relative;
+        overflow: hidden;
+        .team-card-bg {
+            position: absolute;
+            inset: 0;
+            transition: 0.4s;
+            z-index: -1;
+        }
+    }
+    .th-social {
+        position: initial;
+        width: auto;
+        transform: none;
+        opacity: 1;
+        visibility: visible;
+        background: transparent;
+        padding: 20px 0 0;
+        display: inline-flex;
+        gap: 10px;
+        a {
+            width: 30px;
+            height: 30px;
+            line-height: 30px;
+            display: inline-block;
+            border: 1px solid $border-color;
+            border-radius: 50%;
+            font-size: 13px;
+            &:hover {
+                border-color: $theme-color;
+                background: $theme-color;
+                color: $white-color;
+            }
+        }
+    }
+    &:hover {
+        .team-card-bg {
+            transform: scale(1.3);
+        }
+    }
+}
+/* Team Details ---------------------------------- */
+.about-card-img {
+    position: relative;
+    border-radius: 30px;
+    background: $black-color3;
+    padding: 40px;
+    img {
+        border-radius: 10px;
+        width: 100%;
+    }
+    .th-social {
+        text-align: center;
+        margin-top: -20px;
+        a {
+            --icon-size: 40px;
+            border-radius: 50%;
+            background: $white-color;
+            box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.08);
+            &:hover {
+                background: $theme-color;
+            }
+        }
+    }
+    @include xs {
+        padding: 25px;
+    }
+}
+@media (min-width: 1300px) {
+    .team-about-card {
+        margin-left: 55px;
+    }
+}
+
+.team-info-list {
+    ul {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        li {
+            font-size: 20px;
+            font-weight: 600;
+            font-family: $title-font;
+            color: $white-color;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            &:not(:last-child) {
+                margin-bottom: 17px;
+            }
+        }
+    }
+}
+
+.video-grid-wrap {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    .th-video {
+        border-radius: 20px;
+        .play-btn {
+            z-index: 1;
+            &:after {
+                animation: none;
+            }
+        }
+        img {
+            width: 100%;
+        }
+    }
+    @include xs {
+        gap: 15px;
+    }
+}
+

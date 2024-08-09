@@ -1,0 +1,11 @@
+/* Appointment ---------------------------------- */
+.appointment-form {
+    background: rgba(54, 54, 56, 0.25);
+    padding: 60px;
+    @include xs {
+        padding: 40px;
+    }
+    @include vxs {
+        padding: 30px;
+    }
+}

@@ -1,0 +1,138 @@
+/* Contact Area ---------------------------------- */ 
+.contact-sec-1 {
+    position: relative;
+    clip-path: polygon(
+        /**top side clip**/
+        0 0, 
+        calc(50% - 330px) 0%, 
+        calc(50% - 256px) 72px, 
+        calc(50% + 256px) 72px, 
+        calc(50% + 330px) 0,
+        100% 0, 
+        /**bottom side clip**/
+        100% 100%, 
+        calc(50% + 330px) 100%, 
+        calc(50% + 256px) calc(100% - 72px), 
+        calc(50% - 256px) calc(100% - 72px), 
+        calc(50% - 330px) 100%, 
+        0 100%
+    );
+    &:after {
+        content: '';
+        position: absolute;
+        left: 50%;
+        top: 0;
+        height: 100%;
+        width: 4px;
+        background: $title-color;
+        transform: translate(-50%, 0);
+    }
+    @include ml {
+        &:after {
+            display: none;
+        }
+    }
+    @include md {
+        clip-path: none;
+    }
+}
+.contact-wrap-1 {
+    max-width: 1720px;
+    margin-left: auto;
+    margin-right: auto;
+    @media (max-width: 1800px) {
+        margin-left: 100px;
+        margin-right: 100px;
+    }  
+    @include xxl {
+        margin-left: 50px;
+        margin-right: 50px;
+    }  
+    @include xs {
+        margin: 0 15px;
+    }
+}
+
+/* Contact Page ---------------------------------- */ 
+.contact-page-1 {
+    max-width: 1464px;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+.contact-feature {
+    padding: 25px 25px 18px;
+    border-radius: 20px;
+    border: 1px solid $border-color;
+    display: flex;
+    gap: 25px;
+    background: $black-color3;
+    &:not(:last-child) {
+        margin-bottom: 24px;
+    }
+    @media (max-width: 1300px) and (min-width: 1200px) {
+        padding: 14px 10px 14px 14px;
+    }
+    &-icon {
+        align-self: self-start;
+    }
+    .box-title {
+        font-weight: 600;
+        color: $white-color;
+        margin-bottom: 4px;
+    }
+    .contact-feature_link {
+        color: $body-color;
+        font-size: 16px;
+        font-weight: 400;
+        display: block;
+    }
+}
+.contact-map {
+    line-height: 0px;
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+    iframe {
+        width: 100%;
+        height: 680px;
+        @include lg {
+            height: 400px;
+        }
+        @include md {
+            height: 350px;
+        }
+    }
+}
+
+/* Contact Area 2 ---------------------------------- */ 
+.contact-sec-2 {
+    textarea.form-control, textarea {
+        min-height: 215px;
+    }
+}
+.contact-wrap2 {
+    background: $black-color2;
+    padding: 80px;
+    clip-path: polygon(77px 0, 100% 0, 100% calc(100% - 77px), calc(100% - 77px) 100%, 0 100%, 0 77px);
+    @include sm {
+        padding: 60px;
+    }
+    @include vxs {
+        padding: 30px;
+        clip-path: none;
+    }
+    .contact-feature2 {
+        &:not(:last-child) {
+            margin-bottom: 50px;
+        }
+        .box-title {
+            color: $white-color;
+            font-size: 24px;
+            font-weight: 600;
+        }
+        .contact-feature_link {
+            color: $body-color;
+        }
+    }
+}

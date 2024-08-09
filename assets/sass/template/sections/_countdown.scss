@@ -1,0 +1,114 @@
+/* Countdown ---------------------------------- */
+.countdown-thumb1-1 {
+    z-index: 1;
+    @include xxl {
+        width: 380px;
+    }
+    @include ml {
+        width: 350px;
+    }
+    @include xl {
+        width: 280px;
+    }
+}
+.countdown-thumb1-2 {
+    z-index: 1;
+    @include xxl {
+        width: 420px;
+    }
+    @include ml {
+        width: 380px;
+    }
+    @include xl {
+        width: 310px;
+    }
+}
+.countdown-wrap1 {
+    max-width: 682px;
+    margin: auto;
+    .countdown-subtitle {
+        font-size: 44px;
+        font-weight: 700;
+        color: $white-color;
+        text-transform: uppercase;
+        margin-top: -0.28em;
+        @include lg {
+            font-size: 36px;
+        }
+        @include md {
+            font-size: 32px;
+        }
+        @include sm {
+            font-size: 30px;
+        }
+    }
+    .countdown-title {
+        font-family: $war-font2;
+        color: $theme-color;
+        font-size: 74px;
+        font-weight: 400;
+        margin-top: -0.22em;
+        margin-bottom: 8px;
+        @include lg {
+            font-size: 60px;
+        }
+        @include md {
+            font-size: 54px;
+        }
+        @include sm {
+            font-size: 48px;
+        }
+        @include xs {
+            font-size: 40px;
+        }
+    }
+    .countdown-time {
+        font-size: 24px;
+        font-weight: 600;
+        color: $white-color;
+        margin-bottom: 0;
+    }
+}
+.counter-list {
+    display: inline-flex;
+    flex-wrap: wrap;
+    margin-top: 26px;
+    margin-bottom: 0;
+    padding: 0;
+    justify-content: center;
+    gap: 15px;
+    li {
+        display: block;
+        text-align: center;
+        .count-number {
+            color: $white-color;
+            font-size: 44px;
+            font-weight: 700;
+            font-family: $title-font;
+            margin-bottom: 8px;
+            margin-top: 4px;
+            background: $black-color2;
+            padding: 27px 17px;
+            min-width: 80px;
+            clip-path: polygon(12px 0%, calc(100% - 12px) 0%, 100% 12px, 100% calc(100% - 12px), calc(100% - 12px) 100%, 12px 100%, 0% calc(100% - 12px), 0% 12px);
+            background-size: calc(100% - 10px) calc(100% - 10px);
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        .count-name {
+            color: $body-color;
+            font-family: $body-font;
+            text-transform: uppercase;
+            font-weight: 600;
+            font-family: $title-font;
+            font-size: 18px;
+            margin-bottom: -0.4em;
+            display: block;
+        }
+        @include xl {
+            .count-number {
+                font-size: 36px;
+            }
+        }
+    }
+}

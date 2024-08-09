@@ -1,0 +1,137 @@
+.wp-block-query-pagination-numbers,
+.th-pagination {
+    margin-bottom: 40px;
+
+    ul {
+        margin: 0;
+        padding: 0;
+    }
+
+    li {
+        display: inline-block;
+        margin: 0 3px;
+        list-style-type: none;
+
+        &:last-child {
+            margin-right: 0;
+        }
+
+        &:first-child {
+            margin-left: 0;
+        }
+    }
+
+    span,
+    a {
+        display: inline-block;
+        text-align: center;
+        position: relative;
+        border: none;
+        color: $title-color;
+        background-color: $theme-color;
+        width: 82px;
+        height: 56px;
+        line-height: 56px;
+        z-index: 1;
+        font-size: 16px;
+        font-weight: 500;
+        border-radius: 0px;
+        clip-path: polygon(20% 0%, 80% 0%, 100% 50%, 80% 100%, 20% 100%, 0% 50%);
+        .btn-border {
+            position: absolute;
+            height: calc(100% - 3px);
+            width: calc(100% - 3px);
+            top: 1.5px;
+            left: 1.5px;    
+            clip-path: polygon(20% 0%, 80% 0%, 100% 50%, 80% 100%, 20% 100%, 0% 50%);
+            background: $title-color;
+            z-index: -2;
+        }
+        &:before,
+        &:after {
+            content: "";
+            position: absolute;
+            background-color: $title-color;
+            z-index: -1;
+            transition: all 0.4s ease-out;
+            top: 5px;
+            left: 5px;
+            width: 16px;
+            height: calc(100% - 10px);
+            border-radius: 0;            
+            clip-path: polygon(90% 0%, 100% 0%, 30% 50%, 100% 100%, 90% 100%, 20% 50%);
+        }
+        &:after {
+            right: 5px;
+            left: auto;
+            transform: rotate(180deg);
+        }
+        &:active,
+        &:hover {
+            background: $white-color;
+        }
+        &:has(.btn-border) {
+            background-color: $white-color;
+            color: $white-color;
+            &:before,
+            &:after {
+                background: $white-color;
+                clip-path: polygon(100% 5%, 100% 0%, 25% 50%, 100% 100%, 100% 95%, 30% 50%);
+            }
+            &.active,
+            &:hover {
+                background: $theme-color;
+                color: $theme-color;
+                .btn-border {
+                    background: $title-color;
+                }
+                &:before,
+                &:after {
+                    background: $theme-color;
+                }
+            }
+        }
+    }
+}
+.wp-block-query-pagination-next {
+    display: inline-block;
+      text-align: center;
+      position: relative;
+      border: none;
+      color: $title-color;
+      background-color: $smoke-color2;
+      min-width: 56px;
+      height: 56px;
+      line-height: 56px;
+      z-index: 1;
+      font-size: 16px;
+      padding: 0 20px;
+      font-weight: 500;
+      border-radius: 12px;
+    transition: 0.4s ease-in-out;
+  
+    &.active,
+    &:hover {
+        color: $white-color;
+        background-color: $theme-color;
+        border-color: $theme-color;
+    }
+  }
+@include sm {
+    .wp-block-query-pagination-numbers,
+    .th-pagination {
+        span,
+        a {
+            width: 60px;
+            height: 40px;
+            line-height: 40px;
+            font-size: 14px;
+            &:has(.btn-border):before, 
+            &:has(.btn-border):after {
+                background: var(--white-color);
+                -webkit-clip-path: polygon(100% 5%, 100% 0%, 25% 50%, 100% 100%, 100% 95%, 30% 50%);
+                clip-path: polygon(80% 10%, 80% 0%, 15% 50%, 100% 120%, 90% 100%, 30% 50%);
+            }
+        }
+    }
+}

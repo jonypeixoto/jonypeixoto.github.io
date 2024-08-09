@@ -1,0 +1,47 @@
+/* Client Card -------------------------------------*/
+.client-slider1 {
+    margin: -20px 0;
+}
+.client-card {
+    text-align: center;
+    display: block;
+    padding: 20px 0;
+    img {
+        transition: 0.4s;
+    }
+    &:hover {
+        img {
+            transform: scale(1.2);
+        }
+    }
+}
+.client-area-2 {
+    padding: 65px 0;
+    @include xs {
+        padding: 55px 0;
+    }
+}
+/* Client 3 -------------------------------------*/
+.client-area-3 {
+    padding: 50px 0;
+    background-size: 100% 100%;
+    margin-right: -100px;
+    @include ml {
+        background-size: cover;
+        background: $black-color2;
+    }
+    @include xs {
+        margin-right: 0;
+    }
+}
+.client-card2 {
+    text-align: center;
+    display: block;
+    .client-card2-title {
+        color: $white-color;
+        font-size: 24px;
+        font-weight: 600;
+        margin-top: 10px;
+        margin-bottom: -0.3em;
+    }
+}

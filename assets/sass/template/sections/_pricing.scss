@@ -1,0 +1,72 @@
+/* Pricing Card ---------------------------------- */
+.price-card {
+    position: relative;
+    z-index: 2;
+    border: 1px solid $border-color2;
+    padding: 40px;
+    .price-card-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: -1;
+        img {
+            width: 100%;
+        }
+    }
+    .box-title {
+        margin-bottom: 4px;
+    }
+    .price-card_text {
+        margin-bottom: 37px;
+        font-size: 18px;
+    }
+    .price-card_price {
+        font-size: 50px;
+        font-weight: 700;
+        border-bottom: 1px solid $border-color2;
+        padding-bottom: 15px;
+        margin-bottom: 30px;
+        .currency {
+            font-size: 24px;
+            font-weight: 600;
+        }
+        .duration {
+            font-size: 14px;
+            font-weight: 400;
+            color: $theme-color;
+            text-transform: uppercase;
+        }
+    }
+    .price-card_content {
+        .checklist {
+            li {
+                font-weight: 400;
+                &:not(:last-child) {
+                    margin-bottom: 13px;
+                }
+                &.unavailable {
+                    i {
+                        color: $body-color;
+                    }
+                }
+            }
+        }
+    }
+    .th-btn {
+        margin-top: 35px;
+    }
+}
+@include xl {
+    .price-card .price-card_text {
+        font-size: 16px;
+    }
+}
+@include lg {
+    .price-card {
+        padding: 30px;
+    }
+    .price-card .price-card_price {
+        font-size: 40px;
+    }
+}

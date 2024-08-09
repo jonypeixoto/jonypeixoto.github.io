@@ -1,0 +1,329 @@
+
+/* Feature List ---------------------------------- */
+.feature-sec-wrap1 {
+    border-radius: 70px 0 0 70px;
+}
+.feature-card {
+    text-align: center;
+    border-radius: 40px;
+    background: $black-color3;
+    padding: 35px;
+    max-width: 575px;
+    &-border {
+        margin-bottom: 150px;
+        padding: 50px;
+        border-radius: 40px;
+        background: $title-color;
+        display: inline-block;
+        position: relative;
+        &:before,
+        &:after {
+            content: '';
+            position: absolute;
+            left: -79px;
+            top: 0;
+            height: 80px;
+            width: 80px;
+            background: $title-color;
+            clip-path: path("M0 0H79.9695V76.3123C80.0103 77.5714 80.0101 78.8022 79.9695 80V76.3123C79.0054 46.5602 55.1443 0.959397 0 0Z");
+        }
+        &:before {
+            left: auto;
+            right: -1px;
+            top: auto;
+            bottom: -79px;
+        }
+    }
+    &-wrap {
+        display: flex;
+        &:nth-of-type(odd) {
+            justify-content: end;
+            .feature-card-border {
+                padding-right: 0;
+                border-radius: 70px 0px 0px 70px;
+                &:after {
+                    right: -1px;
+                    left: auto;
+                    top: -79px;
+                    transform: rotate(90deg);
+                }
+            }
+        }
+        &:nth-of-type(even) {
+            .feature-card-border {
+                padding-left: 0;
+                border-radius: 0 70px 70px 0;
+                &:after {
+                    transform: rotate(180deg);
+                    top: -79px;
+                    left: 0;
+                }
+                &:before {
+                    left: 0;
+                    right: auto;
+                    transform: rotate(-90deg);
+                    bottom: -80px;
+                }
+            }
+        }
+        &:first-child {
+            .feature-card-border {
+                padding-top: 0;
+                border-radius: 0 0 0px 70px;
+                &:after {
+                    right: auto;
+                    left: -79px;
+                    top: -1px;
+                    transform: none;
+                }
+            }
+        }
+        &:last-child {
+            .feature-card-border {
+                margin-bottom: 0;
+                padding-bottom: 0;
+                border-radius: 70px 0px 0 0;
+                &:before {
+                    left: -80px;
+                    right: auto;
+                    top: auto;
+                    bottom: 0;
+                    transform: rotate(90deg);
+                }
+            }
+        }
+    }    
+    .feature-card-icon {
+        margin-bottom: 30px;
+        display: inline-block;
+        position: relative;
+        transition: 0.4s;
+        .feature-card-icon-mask {
+            position: absolute;
+            inset: 0;
+            mix-blend-mode: color;
+            background: $theme-color;
+        }
+    }
+    .feature-card-title {
+        color: $white-color;
+        font-size: 30px;
+        margin-top: -0.3em;
+        margin-bottom: 15px;
+    }
+    .feature-card-text {
+        margin-bottom: -0.4em;
+    }
+    &:hover {
+        .feature-card-icon {
+            transform: rotateY(180deg);
+        }
+    }
+}
+@include md {
+    .feature-card-wrap:last-child .feature-card-border:before,
+    .feature-card-wrap:first-child .feature-card-border:after {
+        display: none;
+    }
+}
+@include sm {
+    .feature-card-wrap:first-child .feature-card-border {
+        padding-left: 0;
+        border-radius: 0 0 0px 30px;
+    }
+    .feature-card-wrap:nth-of-type(even) .feature-card-border {
+        padding-right: 0;
+        border-radius: 0 30px 30px 0;
+    }
+    .feature-card-wrap:last-child .feature-card-border {
+        padding-left: 0;
+        border-radius: 30px 0px 0 0;
+    }
+}
+@include vxs {
+    .feature-card-border {
+        padding: 40px;
+    }
+    .feature-card .feature-card-title {
+        font-size: 24px;
+    }
+}
+
+/* Skill Feature ---------------------------------- */
+.skill-feature {
+    text-align: left;
+    &:not(:last-child) {
+        margin-bottom: 30px;
+    }
+    &_title {
+        font-size: 24px;
+        font-weight: 600;
+        margin-bottom: 12px;
+        margin-top: -0.2em;
+        font-family: $title-font;
+        color: $white-color;
+        .skill-feature_subtitle {
+            font-size: 16px;
+            color: $theme-color;
+        }
+        @include xs {
+            font-size: 20px;
+        }
+    }
+    .progress {
+        position: relative;
+        height: 10px;
+        background-color: $black-color2;
+        overflow: visible;
+        border-radius: 0;
+    }
+    .progress-bar {
+        background-color: $theme-color;
+        height: 10px;
+        border-radius: 10px;
+        overflow: visible;
+        position: relative;
+        border: 0;
+        &.lose {
+            right: 0;
+            position: absolute;
+            background-color: $error-color;
+        }
+    }
+    .progress-value-wrap {
+        display: inline-flex;
+        gap: 15px 20px;
+        margin-top: 14px;
+        flex-wrap: wrap;
+    }
+    .progress-value {
+        font-size: 14px;
+        font-weight: 400;
+        font-family: $body-font;
+        color: $white-color;
+        position: relative;
+        padding-left: 20px;
+        &:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 8px;
+            height: 10px;
+            width: 10px;
+            border-radius: 50%;
+            background: $theme-color;
+        }
+        &.draw {
+            &:after {
+                background: $black-color2;
+            }
+        }
+        &.lose {
+            &:after {
+                background: $error-color;
+            }
+        }
+    }
+    &.style2 {
+        position: relative;
+        .skill-feature_title {
+            font-size: 18px;
+            font-weight: 600;
+        }
+        .progress {
+            height: 3px;
+            background: $black-color;
+        }
+        .progress-bar {
+            height: 3px;
+            border-radius: 0;
+        }
+        .progress-value {
+            font-size: 18px;
+            font-weight: 600;
+            font-family: $title-font;
+            position: absolute;
+            right: 0;
+            top: 0;
+            padding: 0;
+            &:after {
+                display: none;
+            }
+        }
+    }
+}
+
+/* Feature Game Card ---------------------------------- */
+.feature-game-slider1 {
+    .th-slider {
+        padding-bottom: 100px;
+        margin-top: -100px;
+        z-index: 3;
+    }
+    .slider-arrow {
+        margin-top: calc(var(--icon-size, 56px) / -1);
+    }
+}
+.feature-game-card {
+    text-align: center;
+    .feature-game-card-img {
+        position: relative;
+        img {
+            width: 100%;
+        }
+        .feature-card-img-shape {
+            position: absolute;
+            inset: 0;
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+        .th-btn {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translate(-50%, 50%);
+            padding: 15px 40px;
+            min-width: max-content;
+            opacity: 0;
+            transition: 0.4s;
+        }
+    }
+    .feature-game-card-details {
+        margin-top: 28px;
+        transition: 0.4s;
+        .box-title {
+            margin-bottom: 8px;
+            font-size: 30px;
+            font-weight: 700;
+            a {
+                color: $white-color;
+                &:hover {
+                    color: $theme-color;
+                }
+            }
+        }
+        .text {
+            margin-bottom: -0.3em;
+        }
+    }
+    &:hover {
+        .th-btn {
+            opacity: 1;
+        }
+        .feature-game-card-details {
+            transform: translate(0, 22px);
+        }
+    }
+    @include sm {
+        .feature-game-card-img {
+            .th-btn {
+                opacity: 1;
+            }
+        }
+        .feature-game-card-details {
+            transform: translate(0, 22px);
+        }
+    }
+}

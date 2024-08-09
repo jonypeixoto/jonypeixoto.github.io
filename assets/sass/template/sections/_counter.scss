@@ -1,0 +1,67 @@
+/* Counter 1 ---------------------------------- */
+.counter-card {
+    &-wrap {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .box-number {
+        font-size: 84px;
+        color: $white-color;
+        font-weight: 700;
+        margin-bottom: -0.18em;
+        margin-top: -0.26em;
+        .counter-number {
+            color: $white-color;
+        }
+    }
+    .box-text {
+        font-size: 20px;
+        font-weight: 600;
+        font-family: $title-font;
+        color: $theme-color;
+    }
+}
+@include xxl {
+    .counter-card .box-number {
+        font-size: 70px;
+    }
+}
+@include xl {
+    .counter-card .box-number {
+        font-size: 60px;
+        margin-bottom: -0.1em;
+    }    
+}
+@include lg {
+    .counter-card .box-number {
+        font-size: 50px;
+    }
+}
+@include md {
+    .counter-card {
+        .box-number {
+            font-size: 36px;
+        }
+        .box-text {
+            font-size: 16px;
+        }
+    }
+}
+@include sm {
+    .counter-card {
+        flex: 50%;
+        padding-left: 10px;
+        padding-right: 10px;
+        &-wrap {
+            flex-wrap: wrap;
+            position: relative;
+            gap: 40px 0;
+        }
+    }
+}
+@include vxs {
+    .counter-card .box-text {
+        font-size: 14px;
+    }
+}

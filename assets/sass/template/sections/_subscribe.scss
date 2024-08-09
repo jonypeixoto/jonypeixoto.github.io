@@ -1,0 +1,41 @@
+/* Subscribe area 1 ---------------------------------- */
+.subscribe-wrap1 {
+    padding: 65px 60px;
+    background-size: 100% 100%;
+    @include xs {
+        padding: 45px 40px;
+    }
+    .title-area {
+        .sec-text {
+            font-family: $title-font;
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 0;
+        }
+    }
+    .newsletter-form {
+        .form-group {
+            margin-bottom: 0;
+            display: flex;
+            align-items: center;
+            .form-control {
+                height: 56px;
+                background: $black-color;
+                border: 0;
+                color: $white-color;
+                padding: 0 30px;
+                clip-path: polygon(20px 0%, calc(100% - 20px) 0%, 100% 50%, calc(100% - 20px) 100%, 20px 100%, 0% 50%);
+            }
+            .th-btn {
+                flex: none;
+            }
+        }
+        @include xs {
+            .form-group {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+            }
+        }
+    } 
+}

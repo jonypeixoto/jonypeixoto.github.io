@@ -1,0 +1,133 @@
+/* Video Area 2 -------------------------------*/
+.video-area-1 {
+    mask-size: cover;
+    mask-position: bottom;
+    padding: 182px 0 416px;
+    background-attachment: fixed;
+    @include xs {
+        padding: 152px 0 386px;
+    }
+}
+.video-box1 {
+    position: relative;
+    display: inline-block;
+    .play-btn {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+/*video area 3************/
+.video-box3 {
+    position: relative;
+    .play-btn {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+.video-tab-btn {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    gap: 20px 50px;
+    margin-top: -65px;
+    padding-bottom: 36px;
+    flex-wrap: wrap;
+    a,
+    button {
+        background: transparent;
+        border: 0;
+        color: $white-color;
+        font-family: $title-font;
+        font-size: 18px;
+        font-weight: 600;
+        padding: 2px 15px;
+        position: relative;
+        display: inline-block;
+        z-index: 1;
+        &:after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(90deg, rgba(226, 0, 0, 0.5) 0%, rgba(226, 0, 0, 0) 100%);
+            filter: blur(7.5px);
+            z-index: -1;
+            transition: 0.4s;
+            opacity: 0;
+        }
+        &:hover,
+        &.active {
+            &:after {
+                opacity: 1;
+            }
+        }
+    }
+    @include xxl {
+        margin-top: 20px;
+        padding-bottom: 0;
+    }
+    @include vxs {
+        gap: 20px;
+    }
+}
+.video-shadow-title {
+    position: initial;
+    text-align: center;
+    margin: 60px 0 0;
+    text-transform: uppercase;
+}
+
+/*video area 4************/
+.video-box4 {
+    position: relative;
+    img {
+        width: 100%;
+    }
+    .play-btn {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        --icon-size: 100px;
+        opacity: 0;
+        @include xs {
+            opacity: 1;
+        }
+    }
+    .video-tab-btn {
+        margin-top: 0;
+        gap: 5px;
+        padding: 20px 30px 0;
+        position: absolute;
+        bottom: -1px;
+        left: 50%;
+        transform: translate(-50%, 0);
+        clip-path: polygon(40px 0%, calc(100% - 40px) 0%, 100% 100%, 0% 100%);
+        background: $title-color;
+        display: inline-flex;
+        flex-wrap: nowrap;
+        transition: 0.4s;
+        opacity: 0;
+        a {
+            font-size: 14px;
+        }
+        @include xl {
+            gap: 0;
+        }
+        @include xs {
+            opacity: 1;
+        }
+    }
+    &:hover {
+        .play-btn {
+            opacity: 1;
+        }
+        .video-tab-btn {
+            opacity: 1;
+        }
+    }
+}

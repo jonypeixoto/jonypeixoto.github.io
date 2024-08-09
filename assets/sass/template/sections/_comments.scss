@@ -1,0 +1,302 @@
+.th-comment-form {
+    margin: 0px 0 40px 0;
+    padding: 40px;
+    border-radius: 30px;
+    position: relative;
+    background: $black-color3;
+    .row {
+        --bs-gutter-x: 20px;
+    }
+    .form-title {
+        margin-top: -0.35em;
+
+        a#cancel-comment-reply-link {
+            font-size: 0.7em;
+            text-decoration: underline;
+        }
+    }
+    .form-text {
+        margin-bottom: 25px;
+    }
+    .form-group {
+        > i {
+            color: $body-color;
+        }
+    }
+}
+.blog-comment-area {
+    margin: 40px 0 0;
+}
+.th-comments-wrap {
+    --th-border-color: rgba(69, 248, 130, 0.2);
+    padding: 40px;
+    margin: 0px 0 40px 0;
+    background: $black-color3;
+    border-radius: 30px;
+    .description p:last-child {
+        margin-bottom: -0.5em;
+    }
+
+    .comment-respond {
+        margin: 30px 0 40px;
+    }
+
+    pre {
+        background: #ededed;
+        color: #666;
+        font-size: 14px;
+        margin: 20px 0;
+        overflow: auto;
+        padding: 20px;
+        white-space: pre-wrap;
+        word-wrap: break-word;
+    }
+
+    li {
+        margin: 0;
+    }
+
+    .th-post-comment {
+        padding: 0;
+        position: relative;
+        display: flex;
+        margin-bottom: 40px;
+        padding-bottom: 30px;
+        position: relative;
+        border-bottom: 1px solid $border-color;
+        ol,
+        ul,
+        dl {
+            margin-bottom: 1rem;
+        }
+        ol ol,
+        ol ul,
+        ul ol,
+        ul ul {
+            margin-bottom: 0;
+        }
+    }
+
+    ul.comment-list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        margin-bottom: -40px;
+        ul,
+        ol {
+            ul,
+            ol {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    .comment-avater {
+        @include equal-size(80px);
+        margin-right: 20px;
+        overflow: hidden;
+        border-radius: 20px;
+        img {
+            width: 100%;
+            border-radius: 20px;
+        }
+    }
+
+    .comment-content {
+        flex: 1;
+        position: relative;
+    }
+
+    .commented-on {
+        font-size: 14px;
+        display: inline-block;
+        margin-bottom: 15px;
+        font-weight: 400;
+        color: $body-color;
+
+        i {
+            margin-right: 7px;
+            font-size: 0.9rem;
+            color: $theme-color;
+        }
+    }
+
+    .name {
+        margin-bottom: 1px;
+        font-size: 24px;
+        font-weight: 600;
+        color: $white-color;
+    }
+
+    .comment-top {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .text {
+        margin-bottom: 10px;
+    }
+
+    .children {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+        margin-left: 80px;
+    }
+
+    .reply_and_edit {
+		margin-bottom: -0.46em;
+        a {
+            margin-right: 0px;
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+        .comment-edit-link {
+            transform: translate(-105px, 0);
+            &:first-child {
+                transform: none;
+            }
+        }
+    }
+    .reply-btn {
+        font-weight: 700;
+        font-size: 14px;
+        color: $theme-color;
+        display: inline-block;
+        background: transparent;
+        border-radius: 4px;
+        text-transform: uppercase;
+        padding: 0;
+        position: absolute;
+        right: 0;
+        top: 0;
+        i {
+            margin-right: 7px;
+        }
+
+        &:hover {
+            color: $white-color;
+        }
+    }
+
+    .star-rating {
+        font-size: 12px;
+        margin-bottom: 10px;
+        position: absolute;
+        top: 5px;
+        right: 0;
+        width: 80px;
+    }
+}
+
+ul.comment-list {
+    .th-comment-item:first-child:last-child {
+        > .th-post-comment {
+            border-bottom: 1px solid $border-color;
+            padding-bottom: 30px;
+        }
+    }
+    .th-comment-item:last-child {
+        > .th-post-comment {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+    }
+    .children .th-comment-item {
+        > .th-post-comment {
+            padding-bottom: 30px;
+            border-bottom: 1px solid $border-color;
+        }
+    }
+    &:has( > .th-comment-item ~ .th-comment-item) {
+        &:first-child {
+            > .th-post-comment {
+                padding-bottom: 30px;
+                border-bottom: 1px solid $border-color;
+            }
+        }
+    }
+}
+.th-comments-wrap.th-comment-form {
+    margin: 0;
+}
+@include xl {
+    .th-comment-form,
+    .th-comments-wrap {
+        padding: 30px;
+    }
+}
+@include lg {
+    .blog-comment-area {
+        --blog-space-y: 20px;
+        --blog-space-x: 20px;
+    }
+    .th-comments-wrap,
+    .th-comment-form {
+        --blog-space-x: 20px;
+    }
+    .th-comments-wrap {
+        .children {
+            margin-left: 40px;
+        }
+    }
+}
+
+@include md {
+    .blog-comment-area {
+        --blog-space-x: 40px;
+        --blog-space-y: 40px;
+    }
+	.th-comment-form, .th-comments-wrap {
+		--blog-space-x: 40px;
+	}
+    .th-comments-wrap .comment-avater {
+        margin-right: 20px;
+    }
+    .th-comments-wrap .name {
+        font-size: 18px;
+    }
+}
+
+@include sm {
+    .blog-comment-area {
+        --blog-space-x: 20px;
+        --blog-space-y: 20px;
+    }
+    .th-comment-form, .th-comments-wrap {
+		--blog-space-x: 20px;
+	}
+    .th-comments-wrap {
+        .name {
+            font-size: 16px;
+        }
+        .th-post-comment {
+            display: block;
+        }
+
+        .star-rating {
+            position: relative;
+            top: 0;
+            right: 0;
+        }
+
+        .comment-top {
+            display: block;
+        }
+
+        .comment-avater {
+            margin-right: 0;
+            margin-bottom: 25px;
+        }
+
+        .children {
+            margin-left: 40px;
+        }
+    }
+    .th-comments-wrap {
+        .children {
+            margin-left: 30px;
+        }
+    }
+}

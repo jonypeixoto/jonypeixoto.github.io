@@ -1,0 +1,125 @@
+/* Commando 1 ---------------------------------- */
+.commando-card {
+    position: relative;
+    padding: 32px 40px 45px;
+    margin-top: 78px;
+    margin-right: 30px;
+    @include xl {
+        padding: 30px;
+    }
+    @include md {
+        padding: 50px;
+    }
+    @include xs {
+        padding: 30px;
+    }
+    @include vxs {
+        margin-top: 0;
+        margin-right: 0;
+    }
+    .commando-card-bg-shape {
+        position: absolute;
+        background-size: 100% 100%;
+        inset: 0;
+        z-index: -1;
+    }
+    .commando-card-content {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        @include vxs {
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+    }
+    .commando-thumb {
+        position: relative;
+        top: -110px;
+        right: -70px;
+        margin-left: -91px;
+        margin-bottom: -110px;
+        @include xl {
+            margin-left: -108px;
+        }
+        @include vxs {
+            margin: 0 0 10px 0;
+            position: initial;
+        }
+    }
+    .commando-card-details {
+        margin-bottom: 60px;
+        @include vxs {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+    }
+    .commando-card-title {
+        color: $white-color;
+        font-size: 36px;
+        font-weight: 700;
+        margin-bottom: 0;
+    }
+    .commando-card-text {
+        margin-bottom: 0;
+    }
+    .star-ratting {
+        margin-bottom: 13px;
+        i {
+            color: $black-color;
+            &.active {
+                color: $yellow-color;
+                position: relative;
+                &:after {
+                    content: '';
+                    position: absolute;
+                    inset: 0;
+                    opacity: 0.5;
+                    filter: blur(10px);
+                    background: $yellow-color;
+                }
+            }
+        }
+    }
+    .commando-list-wrap {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+        justify-content: space-between; 
+        @include vxs {
+            gap: 15px;
+        }       
+        .commando-single-list {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            &:first-child {
+                color: $theme-color;
+            }
+            &:nth-child(2) {
+                color: #45F882;
+            }
+            &:nth-child(3) {
+                color: #FFBE18;
+            }
+            .icon {
+                height: 46px;
+                width: 46px;
+                line-height: 46px;
+                text-align: center;
+                position: relative;
+                z-index: 1;
+                &:after {
+                    content: '';
+                    position: absolute;
+                    inset: -25px -30px -30px -30px;
+                    background: url(../img/theme-img/commando-list-bg.svg);
+                    background-size: cover;
+                    z-index: -1;
+                }
+            }
+        }
+    }
+}

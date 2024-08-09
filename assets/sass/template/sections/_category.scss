@@ -1,0 +1,100 @@
+/* Category Card -------------------------------------*/
+.category-card {
+    background-color: $smoke-color2;
+    padding: 40px 15px 45px 15px;
+    text-align: center;
+    transition: 0.4s ease-in-out;
+    .box-shape {
+        position: absolute;
+        inset: 2px;
+        pointer-events: none;
+        background-size: 100% 100%;
+    }
+    .box-icon {
+        @include equal-size-lineHeight(120px);
+        background-color: $white-color;
+        margin: 0 auto 20px auto;
+    }
+    .box-title {
+        font-size: 18px;
+        margin-bottom: -0.3em;
+        transition: 0.1s;
+        a {
+            &:hover {
+                color: $title-color;
+            }
+        }
+    }
+    .box-subtitle {
+        font-size: 14px;
+        font-weight: 500;
+        font-family: $title-font;
+        transition: 0.4s ease-in-out;
+    }
+    &:hover {
+        background-color: $theme-color;
+        .box-title {
+            color: $white-color;
+        }
+        .box-subtitle {
+            color: $white-color;
+        }
+        .box-icon {
+            img {
+                transform: rotateY(180deg);
+            }
+        }
+    }
+}
+
+/* Category Box -------------------------------------*/
+.category-box {
+    text-align: center;
+    .box-icon {
+        @include equal-size-lineHeight(150px);
+        margin: 0 auto 20px auto;
+        border-radius: 999px;
+        position: relative;
+        z-index: 2;
+        &:before,
+        &:after {
+            content: '';
+            position: absolute;
+            border-radius: inherit;
+            z-index: -1;
+        }
+        &:before {
+            inset: 11px;
+            background-color: $white-color;
+            
+        }
+        &:after {
+            inset: 0;
+            border: 2px dashed $border-color;
+        }
+        @include vxs {
+            @include equal-size-lineHeight(130px);
+        }
+    }
+    .box-title {
+        font-size: 20px;
+        margin-bottom: 5px;
+        @include vxs {
+            font-size: 18px;
+        }
+    }
+    .box-text {
+        font-size: 14px;
+    }
+    &:hover {
+        .box-icon {
+            img {
+                transform: rotateY(180deg);
+            }
+            &:after {
+                border-color: $theme-color;
+                animation: spin 10s linear infinite;
+            }
+        }
+    }
+}

@@ -1,0 +1,272 @@
+/* Gallery Area 1 -------------------------------*/
+.gallery-area-1 {
+    margin: 0 45px;
+    @include md {
+        margin: 0;
+    }
+    @include sm {
+        margin: 0 15px;
+    }
+}
+.gallery-wrap1 {
+    .th-video {
+        border-radius: 0;
+        img {
+            width: 100%;
+        }
+    }
+    .th-video .play-btn {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+.gallery-slider1 {
+    margin: 0 -140px;
+    .swiper-slide-active {
+        .th-video {
+            border: 1px solid $theme-color;
+            border-radius: 30px;
+            .play-btn {
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+    }
+    .slider-arrow {
+        --pos-x: 100px;
+        --icon-size: 92px;
+        --icon-font-size: 24px;
+        background: $title-color;
+        color: $theme-color;
+        &:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 100%;
+            border: double 1px transparent;
+            border-radius: 50px;
+            background-image: linear-gradient($title-color, $title-color),linear-gradient(to left, $theme-color2, $theme-color3 80%);
+            background-origin: border-box;
+            background-clip: content-box, border-box;
+            transition: 0.4s;
+            z-index: -1;
+        }
+        &.slider-next {
+            &:before {
+                background-image: linear-gradient($title-color, $title-color),linear-gradient(to right, $theme-color2, $theme-color3 80%);
+            }
+        }
+        &:hover {
+            color: $white-color;
+        }
+    }
+}
+@include xl {
+    .gallery-slider1 .slider-arrow {
+        --pos-x: 110px;
+        --icon-size: 72px;
+    }
+}
+@include md {
+    .gallery-slider1 {
+        margin: 0 -40px;
+    }
+}
+@include sm {
+    .gallery-slider1 {
+        margin: 0;
+    }
+}
+@include xs {
+    .gallery-wrap1 {
+        .play-btn.style3 > i {
+            --icon-size: 50px;
+            --icon-font-size: 16px;
+        }
+    }
+}
+
+/* Gallery Area 2 -------------------------------*/
+.gallery-card {
+    position: relative;
+    .box-img {
+        img {
+            width: 100%;
+        }
+    }
+    .play-btn {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        opacity: 0;
+    }
+    &:hover {
+        .play-btn {
+            opacity: 1;
+        }
+    }
+}
+
+/* Gallery Area 3 -------------------------------*/
+.gallery-card.style2 {
+    background: transparent;
+    transition: 0.4s;
+    .gallery-card-img {
+        position: relative;
+        img {
+            width: 100%;
+        }
+        .img-overlay {
+            position: absolute;
+            inset: 0;
+            transition: 0.4s;
+            opacity: 0;
+        }
+    }
+    .play-btn {
+        position: relative;
+        opacity: 1;
+        transform: none;
+        left: auto;
+        top: auto;
+
+    }
+    .gallery-content {
+        display: flex;
+        align-items: center;
+        text-align: left;
+        padding: 33px 120px 0;
+        transition: 0.4s;
+        opacity: 0;
+        position: absolute;
+        left: 0;
+        right: 0;
+        gap: 10px;
+        @include lg {
+            padding: 33px 80px 0;
+        }
+        @include md {
+            position: inherit;
+        }
+        @include sm {
+            padding: 33px 60px 0;
+        }
+        @include xs {
+            padding: 33px 30px 0;
+        }
+        @include vxs {
+            padding: 33px 0px 0;
+        }
+    }
+    .gallery-card-subtitle {
+        color: $theme-color;
+        font-size: 18px;
+        font-weight: 600;
+        font-family: $title-font;
+        margin-bottom: 3px;
+        display: block;
+    }
+    .gallery-card-title {
+        font-size: 36px;
+        font-weight: 700;
+        margin-bottom: 0;
+        a {
+            color: $white-color;
+            &:hover {
+                color: $theme-color;
+            }
+        }
+        @include xl {
+            font-size: 24px;
+        }
+    }
+}
+.gallery-slider3 {
+    @include md {
+        padding: 0 30px;
+    }
+    .th-slider {
+        padding-top: 135px;
+        @include md {
+            padding-top: 0;
+        }
+    }
+    .swiper-3d .swiper-slide-shadow-right,
+    .swiper-3d .swiper-slide-shadow-left {
+        background-image: none;
+    }
+    .swiper-slide-active {
+        &.gallery-card.style2 {
+            margin-top: -135px;
+            margin-bottom: -135px;
+            .gallery-card-img {
+                .img-overlay {
+                    opacity: 1;
+                }
+            }
+            .gallery-content {
+                opacity: 1;
+            }
+            @include md {
+                margin-top: 0;
+                margin-bottom: 0;
+            }
+        }
+    }
+    .swiper-slide-prev {
+        transform: translate(104px, 0);
+        @include lg {
+            transform: translate(70px, 0);
+        }
+        @include md {
+            transform: none;
+        }
+    }
+    .swiper-slide-next {
+        transform: translate(-104px, 0);
+        z-index: -1;
+        @include lg {
+            transform: translate(-70px, 0);
+        }
+        @include md {
+            transform: none;
+        }
+    }
+    .slider-pagination {
+        height: auto;
+        .swiper-pagination-bullet {
+            --swiper-pagination-bullet-size: 3px;
+            --swiper-pagination-bullet-horizontal-gap: 0;
+            border-radius: 0;
+            width: 204px;
+            bottom: 0;
+            margin: 0;
+            background: $black-color3;
+            transition: 0.4s;
+            @include xl {
+                width: 100px;
+            }
+            @include md {
+                width: 90px;
+            }
+            @include sm {
+                width: 70px;
+            }
+            @include xs {
+                width: 50px;
+            }
+            @include vxs {
+                width: 40px;
+            }
+            &:before {
+                display: none;
+            }
+            &.swiper-pagination-bullet-active {
+                background: $theme-color;
+            }
+        }
+    }
+}

@@ -1,0 +1,47 @@
+/* ERROR ---------------------------------- */
+.error-page {
+	position: relative;
+	z-index: 1;
+	&:after {
+		content: '';
+		position: absolute;
+		inset: 0;
+		z-index: -1;
+		background: radial-gradient(60.14% 60.14% at 50% 50%, rgba(11, 14, 19, 0.96) 0%, rgba(11, 14, 19, 0.97) 100%);
+	}
+}
+.error-content {
+    text-align: center;
+}
+.error-img {
+	text-align: center;
+	margin-bottom: 45px;
+}
+.error-title {
+    margin-bottom: 17px;
+}
+.error-text {
+    margin-bottom: 30px;
+	max-width: 540px;
+	font-size: 18px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+@include md {
+	.error-title {
+		margin-bottom: 15px;
+	}
+	.error-img {
+		margin-bottom: 30px;
+	}
+	.error-text {
+		margin-bottom: 25px;
+	}
+}
+
+@include sm {
+	.error-title {
+		margin-bottom: 10px;
+	}
+}

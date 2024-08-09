@@ -1,0 +1,189 @@
+/* Process Card ---------------------------------- */
+.process-card {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding-top: 26px;
+    .box-content {
+        background-color: $smoke-color;
+        padding: 30px 25px 30px;
+        margin:  0 0 18px 18px;
+        position: relative;
+        .box-text {
+            max-width: 221px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        &:after {
+            content: '';
+            position: absolute;
+            border: 1px solid $theme-color;
+            inset: 30px 18px -18px -18px;
+            z-index: -1;
+            transition: 0.4s;
+        }
+    }
+    .box-icon {
+        margin-bottom: 30px;
+    }
+    .box-number {
+        text-transform: uppercase;
+        background: $theme-color;
+        position: absolute;
+        width: 50px;
+        height: 46px;
+        line-height: 46px;
+        color: $white-color;
+        font-size: 24px;
+        font-weight: 600;
+        font-family: $title-font;
+        z-index: 1;
+        left: 38px;
+        top: 0;
+        transition: 0.4s;
+        &:after {
+            content: '';
+            position: absolute;
+            background: $theme-color;
+            width: 10px;
+            height: 26px;
+            top: 0;
+            right: -10px;
+            clip-path: polygon(0 0, 0% 100%, 100% 100%);
+            transition: 0.4s;
+        }
+    }
+    .box-title {
+        margin-bottom: 6px;
+        font-size: 20px;
+        font-weight: 600;
+        @include ml {
+            font-size: 18px;
+        }
+        @include xl {
+            font-size: 20px;
+        }
+    }
+    &:hover {
+        .box-icon {
+            img {
+                transform: rotateY(180deg);
+            }
+        }
+        .box-number {
+            background: $theme-color2;
+            &:after {
+                background: $theme-color2;
+            }
+        }
+        .box-content {
+            &:after {
+                border-color: $theme-color2;
+            }
+        }
+    }
+}
+
+@include lg {
+    .process-card {
+        .box-content {
+            padding: 30px 10px;
+        }
+    }
+}
+
+@include sm {
+    .process-card {
+        .box-content {
+            padding: 30px;
+        }
+    }
+}
+/* Process Card ---------------------------------- */
+.process-card-wrap {
+    &:last-child {
+        .process-card.style2 {
+            &:after {
+                display: none;
+            }
+        }
+    }
+    &:nth-of-type(even) {
+        .process-card.style2 {
+            &:after {
+                transform: rotateX(180deg);
+            }
+        }
+    }
+}
+.process-card.style2 {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding-top: 0;
+    overflow: hidden;
+    &:after {
+        content: '';
+        position: relative;
+        width: 83px;
+        height: 35px;
+        background: url(../img/icon/process_arrow2-1.svg);
+        display: block;
+        margin: 0 14px 0 38px;
+    }
+    .box-number {
+        height: 50px;
+        width: 50px;
+        border-radius: 50%;
+        line-height: 50px;
+        font-size: 16px;
+        font-weight: 600;
+        margin: 0;
+        left: auto;
+        right: 26px;
+        &:after {
+            display: none;
+        }
+    }
+    .box-content {
+        width: 276px;
+        height: 276px;
+        border-radius: 50%;
+        position: relative;
+        margin: 23px;
+        padding: 50px 0;
+        
+        &:after {
+            border-radius: 50%;
+            inset: -23px;
+            border: 0;
+            background: url(../img/process/process-card-bg2-1.png);
+            background-size: cover;
+            animation: spin 10s linear infinite;
+        }
+    }
+}
+@include ml {
+    .process-card.style2:after {
+        margin: 0 4px 0 28px;
+    }
+    .process-card.style2 .box-content {
+        padding: 45px 0;
+    }
+}
+@include xl {
+    .process-card.style2:after {
+        display: none;
+    }
+}
+@include lg {
+    .process-card.style2 {
+        justify-content: center;
+    }
+}
+@media (max-width: 320px) {
+    .process-card.style2 .box-content {
+        margin: 0;
+        
+    }
+}

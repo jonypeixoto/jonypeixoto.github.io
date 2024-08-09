@@ -1,0 +1,44 @@
+/* Brand 1 ---------------------------------- */
+.brand-box {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    height: 120px;
+    width: 324px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include ml {
+        width: 100%;
+    }
+    .brand-box-shape {
+        position: absolute;
+        inset: 0;
+        background-size: 100% 100%;
+        z-index: -1;
+    }
+    .brand-box-shape2 {
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        transition: 0.4s;
+        opacity: 0;
+        background-size: 100% 100%;
+    }
+    &:hover {
+        .brand-box-shape2 {
+            opacity: 1;
+        }
+    }
+}
+.brand-sec2-shape {
+    position: absolute;
+    inset: 0;
+    background-size: contain;
+    opacity: 0.05;
+}
+
+/* Brand 2 ---------------------------------- */
+.brand-box.style2 {
+    width: 100%;
+}
